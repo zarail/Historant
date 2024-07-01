@@ -10,13 +10,12 @@
     <% end %>
 
     <% if flash.now[:notice].present? %>
-    <div class="alert alert-info mt-3">
+      <div class="alert alert-info mt-3">
         <%= flash.now[:notice] %>
       </div>
     <% end %>
   </div>
   <div class="row row-cols-1 row-cols-md-3 g-4">
-    <!-- alternative to next line: <% current_user.menu_items.each do |item| %> -->
     <% @menu_items.each do |item| %>
       <%= render "menu_items/menu_item_card", menu_item: item %>
     <% end %>
