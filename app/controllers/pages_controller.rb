@@ -43,12 +43,10 @@ class PagesController < ApplicationController
 
   def search
     if params[:query].present?
-      @menu_items = MenuItem.global_search(params[:query])
-      if @menu_items.empty?
-        flash.now[:notice] = "No results found for '#{params[:query]}'!"
-      end
+      @menu_items = current_user.menu_items.global_search(params[:query])
+      flash.now[:notice] = "No results found for '#{params[:query]}'" if @menu_items.blank?
     else
-      @menu_items = MenuItem.all
+      @menu_items = current_user.menu_items
     end
   end
 end
