@@ -1,16 +1,20 @@
 <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://res.cloudinary.com/dwrkiuiqa/image/upload/v1678889223/chris-liverani-oCsaxvGCehM-unsplash_jivr6l.jpg);">
   <div class="container text-start">
     <img src="https://res.cloudinary.com/dwrkiuiqa/image/upload/v1678439564/Historant-logo-BIG-LOGO-WHITE_huxdwd.png" width="200" class="card-img-top" alt="Logo">
-    <p class="slogan">Here you keep the history of what you have ordered once!</p>
 
-    <% if user_signed_in? %>
-      <%= link_to "Home", dashboard_path, class: "btn btn-ghost"%>
-    <% else %>
-      <p>Already a member?</p>
-      <%= link_to "Log in", user_session_path, class: "btn btn-ghost"%>
-      <p class="mt-4">New to Historant?</p>
-      <%= link_to "Sign up", new_user_registration_path, class: "btn btn-ghost-sec" %>
-    <% end %>
+    <div class="sloganAndAuth">
+      <p class="slogan">Keep the history of what you ordered!</p>
+
+      <% if user_signed_in? %>
+        <%= link_to "Got to dashborad", dashboard_path, class: "btn btn-ghost"%>
+      <% else %>
+        <p>Already a member?</p>
+        <%= link_to "Log in", user_session_path, class: "btn btn-ghost"%>
+        <p class="mt-4">New to Historant?</p>
+        <%= link_to "Sign up", new_user_registration_path, class: "btn btn-ghost-sec" %>
+      <% end %>
+    </div>
+
     <div class="home-footer fixed-bottom text-center">
       <a>Find us here: </i></a>
       &nbsp
