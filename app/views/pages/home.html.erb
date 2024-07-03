@@ -6,7 +6,7 @@
       <p class="slogan">Keep the history of what you ordered!</p>
 
       <% if user_signed_in? %>
-        <%= link_to "Go to Dashborad", dashboard_path, class: "btn btn-ghost"%>
+        <%= link_to "Go to Dashboard", dashboard_path, class: "btn btn-ghost"%>
       <% else %>
         <p>Already a member?</p>
         <%= link_to "Log in", user_session_path, class: "btn btn-ghost"%>
